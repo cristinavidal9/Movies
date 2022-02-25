@@ -1,6 +1,6 @@
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(array) {
-  let result =  2
+  let result =  4
   console.log("EXERCICE 1 ->", result);
   return result;
 }
