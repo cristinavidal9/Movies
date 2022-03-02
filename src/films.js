@@ -26,11 +26,18 @@ function orderAlphabetically(array) {
 
   const titleMovies = array.map((item) => item.title);
   const orderMovies = titleMovies.sort()
+
   return orderMovies.slice(0,20);
 }
 
 // Exercise 5: Order by year, ascending
-function orderByYear() {
+function orderByYear(array) {
+
+  const _movies = array.map((item) => {return item});
+
+  return _movies.sort((a, b) => {(a.year == b.year) ? (a.title > b.title) ? 1 : -1: 0
+
+  return a.year - b.year});
 
 }
 
