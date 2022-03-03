@@ -35,17 +35,39 @@ function orderByYear(array) {
 
   const _movies = array.map((item) => {return item});
 
-  return _movies.sort((a, b) => {(a.year == b.year) ? (a.title > b.title) ? 1 : -1: 0
+  return _movies.sort((a, b) => {
 
-  return a.year - b.year});
+  if (a.year > b.year) {
+    return 1
+  }
+  if (a.year < b.year) {
+    return -1
+  }
+  if (a.title > b.title) {
+    return 1
+  }
+  if (a.title < b.title) {
+    return -1
+  }
+
+});
 
 }
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {
+function moviesAverageByCategory(array, genre) {
+
+const moviesGenre = array.filter(item =>(item.genre).includes(genre))
+
+const scoreGenre = moviesGenre.map(item => item.score)
+
+const reducer = (acc, currentValue) => currentValue.score === '' ? acc : acc + currentValue
+
+let averageMovies = scoreGenre.reduce(reducer) / moviesGenre.length;
+
+return parseFloat(averageMovies)
 
 }
-
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes() {
 
