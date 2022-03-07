@@ -126,7 +126,6 @@ function hoursToMinutes(array) {
 
     return result;
 }
-
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear(array, year) {
   
